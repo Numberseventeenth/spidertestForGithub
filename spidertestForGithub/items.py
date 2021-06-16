@@ -5,8 +5,10 @@
 
 import scrapy
 
-
-class SpidertestforgithubItem(scrapy.Item):
+"""
+    糗事百科(段子)item
+"""
+class QiushibaikeItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    author = scrapy.Field()
+    content = scrapy.Field()
