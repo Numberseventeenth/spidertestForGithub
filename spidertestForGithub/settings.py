@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = 'spidertestForGithub'
 
@@ -64,9 +65,11 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'spidertestForGithub.pipelines.SpidertestforgithubPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   # 'spidertestForGithub.pipelines.QiushibaikePipeline': 300,
+   # 'spidertestForGithub.pipelines.YangGuangPipeline': 300,
+   # 'spidertestForGithub.pipelines.ImageDownPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,3 +91,8 @@ DEFAULT_REQUEST_HEADERS = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+project_dir = os.path.abspath(os.path.dirname(__file__))
+IMAGES_STORE='os.path.join(project_dir,"images")'
+
+MONGO_HOST='localhost'
