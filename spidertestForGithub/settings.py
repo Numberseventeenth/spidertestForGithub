@@ -55,6 +55,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
 #    'spidertestForGithub.middlewares.SpidertestforgithubDownloaderMiddleware': 543,
+#    'spidertestForGithub.middlewares.RandomUserAgentMiddlewares': 543,
 #}
 
 # Enable or disable extensions
@@ -91,6 +92,9 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+#随机更换user-agent的type
+RANDOM_UA_TYPE = "random"
 
 project_dir = os.path.abspath(os.path.dirname(__file__))
 IMAGES_STORE='os.path.join(project_dir,"images")'
