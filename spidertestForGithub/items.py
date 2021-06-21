@@ -49,15 +49,13 @@ class YgrxArticleItem(scrapy.Item):
 class BcyItem(scrapy.Item):
     image_urls = scrapy.Field()
 """
-    苏宁-图书-大分类
+    苏宁-图书-分类
 """
-class big_category(scrapy.Item):
-    title = scrapy.Field()
+class suning_category(scrapy.Item):
+    big_category = scrapy.Field()
+    sub_category = scrapy.Field()
+    min_category = scrapy.Field()
     url = scrapy.Field()
-"""
-    苏宁-图书-中分类
-"""
-class big_category(scrapy.Item):
-    title = scrapy.Field()
-    url = scrapy.Field()
+
+
 

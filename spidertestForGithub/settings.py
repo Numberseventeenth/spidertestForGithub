@@ -70,6 +70,7 @@ ITEM_PIPELINES = {
    # 'spidertestForGithub.pipelines.QiushibaikePipeline': 300,
    # 'spidertestForGithub.pipelines.YangGuangPipeline': 300,
    # 'spidertestForGithub.pipelines.ImageDownPipeline': 300,
+   'spidertestForGithub.pipelines.SuningCategoryPipleline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

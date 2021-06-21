@@ -10,6 +10,8 @@ import re
 from spidertestForGithub import settings
 import os
 import requests
+import pymysql
+
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
@@ -81,4 +83,31 @@ class ImageDownPipeline(object):
                         break
                     handle.write(block)
         return item
-
+'''
+    苏宁-图书-分类
+'''
+# class SuningCategoryPipleline(object):
+#     def __init__(self):
+#         dbparams = {
+#             'host':'127.0.0.1',
+#             'port':3306,
+#             'user':'root',
+#             'password':'12345',
+#             'database':'pythondemo',
+#             'charset':'utf8'
+#         }
+#         self.conn = pymysql.connect(**dbparams)
+#         self.cursor = self.conn.cursor()
+#         self._sql = None
+#     def process_item(self,item,spider):
+#         self.cursor.execute(self.sql,(item['big_category'],item['sub_category'],item['min_category'],item['url']))
+#         self.conn.commit()
+#         yield item
+#     @property
+#     def sql(self):
+#         if not self._sql:
+#             self._sql = """
+#                 insert into suningbookcategory(id,big_category,sub_category,min_category,url)values(null,%s,%s,%s,%s)
+#             """
+#             return self._sql
+#         return self._sql
