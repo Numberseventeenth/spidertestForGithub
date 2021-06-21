@@ -53,10 +53,11 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'spidertestForGithub.middlewares.SpidertestforgithubDownloaderMiddleware': 543,
-#    'spidertestForGithub.middlewares.RandomUserAgentMiddlewares': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   # 'spidertestForGithub.middlewares.SpidertestforgithubDownloaderMiddleware': 543,
+   # 'spidertestForGithub.middlewares.RandomUserAgentMiddlewares': 543,
+   'spidertestForGithub.middlewares.SeleniumDownloadMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -70,7 +71,10 @@ ITEM_PIPELINES = {
    # 'spidertestForGithub.pipelines.QiushibaikePipeline': 300,
    # 'spidertestForGithub.pipelines.YangGuangPipeline': 300,
    # 'spidertestForGithub.pipelines.ImageDownPipeline': 300,
-   'spidertestForGithub.pipelines.SuningCategoryPipleline': 300,
+   # 'spidertestForGithub.pipelines.SuningCategoryPipleline': 300,
+   # 'spidertestForGithub.pipelines.JianshuTwistedPipeline': 300,
+   # 'spidertestForGithub.pipelines.BmwImagePipline': 300,
+   'spidertestForGithub.pipelines.BossPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -97,7 +101,11 @@ ITEM_PIPELINES = {
 #随机更换user-agent的type
 RANDOM_UA_TYPE = "random"
 
-project_dir = os.path.abspath(os.path.dirname(__file__))
-IMAGES_STORE='os.path.join(project_dir,"images")'
+# project_dir = os.path.abspath(os.path.dirname(__file__))
+# IMAGES_STORE='os.path.join(project_dir,"images")'
 
 MONGO_HOST='localhost'
+
+import os
+# 图片下载路径，供imagespipeline使用
+IMAGES_STORE = os.path.join(os.path.dirname(os.path.dirname(__file__)),'images')

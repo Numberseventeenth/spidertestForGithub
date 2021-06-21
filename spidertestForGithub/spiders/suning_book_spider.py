@@ -1,7 +1,9 @@
 import scrapy
 from spidertestForGithub.items import suning_category
 
-
+"""
+    苏宁-图书分类
+"""
 class SuningBookSpiderSpider(scrapy.Spider):
     name = 'suning_book_spider'
     allowed_domains = ['suning.com']

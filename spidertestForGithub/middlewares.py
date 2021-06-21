@@ -10,6 +10,22 @@ from fake_useragent import UserAgent
 from itemadapter import is_item, ItemAdapter
 
 
+
+from selenium import webdriver
+import time
+from scrapy.http.response.html import HtmlResponse
+
+class SeleniumDownloadMiddleware(object):
+    def __init__(self):
+        self.driver = webdriver.Chrome(executable_path=r'E:\driver\chrome91driver\chromedriver.exe')
+    def process_request(self,request,spider):
+        self.driver.get(request.url)
+        time.sleep(2)
+        source = self.driver.page_source
+        response = HtmlResponse(url=self.driver.current_url,body=source,request=request,encoding='utf-8')
+        # 下一页
+        return response
+
 class SpidertestforgithubSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
