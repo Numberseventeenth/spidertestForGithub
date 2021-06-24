@@ -31,6 +31,7 @@ class RenrenLoginSpider(scrapy.Spider):
         temp = json.dumps(data)
         # 使用FromRequest发送数据不能转换成json
         # response = scrapy.FormRequest(url=url,formdata=data,callback=self.parse_page)
+        # 报415错误-----请求头content-type的类型使用json格式(referer)
         response = scrapy.Request(url=url,body=temp,callback=self.parse_page,method='POST')
         yield response
 

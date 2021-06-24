@@ -142,6 +142,19 @@ class ESFHouseItem(scrapy.Item):
     unit = scrapy.Field()
     # 房天下详情页的url
     origin_url = scrapy.Field()
+"""
+    百度贴吧----帖子抓取
+"""
+class TiebaItem(scrapy.Item):
+    url = scrapy.Field()
+    title = scrapy.Field()
+    author_name = scrapy.Field()
+    content_str = scrapy.Field()
+    content_image_urls = scrapy.Field()
+
+
+
+
 
 
 
